@@ -51,6 +51,21 @@ const validateCred = (cardInput) => {
 
 validateCred(valid1)
 
+const findInvalidCards = (cardBatch) => {
+  
+    const invaildCardIndex = [];
+    
+   const invalidCards = cardBatch.map((el,index) => {
+      if(validateCred(el) === false) {
+        invaildCardIndex.push(index)
+      }
+   })
+    
+   return invaildCardIndex
+   
+  }
+  
+  findInvalidCards(batch)
 
 
 

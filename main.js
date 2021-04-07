@@ -39,9 +39,13 @@ const validateCred = (cardInput) => {
 
    let cardSum = reversedCard.reduce((acc,cv) => {
     return acc+cv
-    })
+    },0)
 
-console.log(cardSum);
+    if(cardSum % 10 === 0){
+        return true
+    } else {
+        return false
+    }
 
 }
 

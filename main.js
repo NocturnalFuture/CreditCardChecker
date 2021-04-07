@@ -27,9 +27,24 @@ const batch = [valid1, valid2, valid3, valid4, valid5, invalid1, invalid2, inval
 const validateCred = (cardInput) => {
     const cardCopy = [...cardInput]
     const reversedCard = cardCopy.reverse();
+
+   for(let i = 0; i < reversedCard.length; i++){
+       if(i % 2 !== 0) {
+           cardCopy[i] = cardCopy[i]*2;
+           console.log(cardCopy[i])
+           if(cardCopy[i] > 9){
+               cardCopy[i] -= 9;
+             
+           }
+       }
+   }
+
+
+
+
 }
 
-
+validateCred(valid1)
 
 
 

@@ -62,10 +62,22 @@ const findInvalidCards = (cardBatch) => {
    })
     
    return invaildCardIndex
-   
   }
   
-  findInvalidCards(batch)
+  // Storing the array of indexs in a var to be passed on as a argument
+  const invalidIndexs = findInvalidCards(batch);
+
+  function idInvalidCardCompanies(array, targetedArray){
+    
+    const filterOutInvalids = array.filter((el,index) => {
+       return targetedArray.indexOf(index) !== -1
+    })
+    
+  }
+  
+  
+  idInvalidCardCompanies(batch,invalidIndexs)
+  
 
 
 

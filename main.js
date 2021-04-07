@@ -73,6 +73,36 @@ const findInvalidCards = (cardBatch) => {
        return targetedArray.indexOf(index) !== -1
     })
     
+    const companiesList = [];
+
+    const checkForCompany = filterOutInvalids.map((el) => {
+        switch(el[0]){
+            case 3:
+                companiesList.push('Amex');
+                break;
+         case 4:
+                companiesList.push('Visa');
+                break;
+        case 5:
+                companiesList.push('MasterCard');
+                break;
+        case 6: 
+            companiesList.push('Discover');
+            break;
+            default: {
+                companiesList.push('Company not found');
+            }
+        }
+    })
+
+const filterOutDuplis = companiesList.filter((el,index) => {
+        if(companiesList.indexOf(el) !== index) {
+            return true
+        }
+})
+
+return filterOutDuplis
+
   }
   
   

@@ -31,16 +31,17 @@ const validateCred = (cardInput) => {
    for(let i = 0; i < reversedCard.length; i++){
        if(i % 2 !== 0) {
            cardCopy[i] = cardCopy[i]*2;
-           console.log(cardCopy[i])
            if(cardCopy[i] > 9){
                cardCopy[i] -= 9;
-             
            }
        }
    }
 
+   let cardSum = reversedCard.reduce((acc,cv) => {
+    return acc+cv
+    })
 
-
+console.log(cardSum);
 
 }
 
